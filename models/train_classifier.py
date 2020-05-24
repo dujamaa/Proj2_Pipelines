@@ -71,7 +71,7 @@ def build_model():
         Args: 
             None                   
         Returns: 
-            model
+            cv: tuned model
     """
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
@@ -79,6 +79,26 @@ def build_model():
         ('clf', MultiOutputClassifier(RandomForestClassifier()))
     ])
     
+    # tune pipeline with best parameters found in GridSearchCV
+    params_custom = {'clf__estimator__min_samples_split': 2, 
+                     'vect__max_df': 0.75, 'vect__min_df': 0.01, 
+                     'vect__ngram_range': (1, 1)}
+    
+    pipeline.set_params(**params_custom)
+    
+    # parameters for GridSearchCV
+    parameters = {
+        #'vect__max_df': (0.5, 0.75, 1.0),
+        #'vect__min_df': (0.01, 0.1, 1.0),
+        #'vect__max_features': (None, 5000, 10000),
+        #'vect__ngram_range': ((1, 1), (1, 2), (1, 3)),
+        'tfidf__use_idf': (True, False),
+        #'clf__estimator__n_estimators': [50, 100, 200],
+        #'clf__estimator__min_samples_split': [2, 3, 4],
+    }
+    
+    cv = GridSearchCV(pipeline, param_grid=parameters)
+   
     return cv
 
 
@@ -111,7 +131,7 @@ def save_model(model, model_filepath):
     """ Export model as a pickle file        
         Args: 
             model: the model to be exported 
-            model_filepath: the file name and path to expor the model
+            model_filepath: the file name and path to export the model
         Returns: 
             None
     """    
