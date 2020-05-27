@@ -1,12 +1,12 @@
 # Disaster Response Pipeline Project
 
 ### Table of Contents
-1. [Installation](###Installation)
+1. [Installation](#Installation)
 2. Project Motivation
 3. File Descriptions
 4. Instructions
 5. Results
-6. [Acknowledgements](###Acknowledgements)
+6. [Acknowledgements](#Acknowledgements)
 
 ### Installation
 
