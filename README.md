@@ -1,7 +1,7 @@
 # Disaster Response Pipeline Project
 
 ### Table of Contents
-1. [Project Motivation](#Project Motivation)
+1. [Project Motivation](#Project-Motivation)
 2. [Installation](#Installation)
 3. [File Descriptions](#File-Descriptions)
 4. [Instructions](#Instructions)
@@ -9,7 +9,7 @@
 6. [Acknowledgements](#Acknowledgements)
 
 ### Project Motivation
-This project is being completed as one of the requirements for Udacity's Data Science Nanodegree program.  The objective of this project is to develop an ETL pipeline from disaster data provided by [Figure Eight](https://www.figure-eight.com/) that feeds into a machine learning pipeline to build a model for a web app that classifies disaster messages.    
+This project is being completed as part of the requirements for Udacity's Data Science Nanodegree program.  The objective of this project is to develop an ETL pipeline from disaster data provided by [Figure Eight](https://www.figure-eight.com/) that feeds into a machine learning pipeline to build a model for a web app that classifies disaster messages.    
 
 ### Installation
 This project uses the following libraries for the Anaconda distribution of Python version 3.6+:
@@ -22,7 +22,11 @@ This project uses the following libraries for the Anaconda distribution of Pytho
 * sqlalchemy
 
 ### File Descriptions
-
+*app
+*data
+*models
+*ETL Pipeline Preparation.ipynb - Jupyter notebook to perform preliminary coding and ananlysis for the ETL pipeline process_data.py file.
+*ML Pipeline Preparation.ipynb - Jupyter notebook to perform preliminary coding and exploratory analysis before refactoring into the train_classifier.py file.
 
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
