@@ -52,6 +52,19 @@ This project uses the following libraries for the Anaconda distribution of Pytho
 3. Go to http://0.0.0.0:3001/
 
 ### Results
+Running process_data.py and train_classifier.py will print results to the terminal screen.  The screen below will be displayed for 5 to 10 minutes while the model is building and training:
+![Figure1](https://raw.githubusercontent.com/dujamaa/Proj2_Pipelines/master/images/screenshot1.png)
+
+After the model has completed training, the f1 score, precision, and recall for each output category is printed to the terminal screen and the model is saved as shown in the screenshot below:
+![Figure2](https://raw.githubusercontent.com/dujamaa/Proj2_Pipelines/master/images/screenshot2.png)
+
+After the web app starts by running run.py is run in the app directory, the web app will display the following three visualizations: 1) Distribution of Message Genres, 2) Distribution of Message Genres with no Categorization, and 3) Distribution of Messages per Category.
+![Figure3](https://raw.githubusercontent.com/dujamaa/Proj2_Pipelines/master/images/screenshot3.png)
+![Figure4](https://raw.githubusercontent.com/dujamaa/Proj2_Pipelines/master/images/screenshot4.png)
+
+New messages can be entered in the text box to classify the message using the model as shown in the screenshots below:
+![Figure5](https://raw.githubusercontent.com/dujamaa/Proj2_Pipelines/master/images/screenshot5.png)
+![Figure6](https://raw.githubusercontent.com/dujamaa/Proj2_Pipelines/master/images/screenshot6.png)
 
 ### Acknowledgements
 * [Udacity](https://www.udacity.com/) is acknowledged for assigning this project.
