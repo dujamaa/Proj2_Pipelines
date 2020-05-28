@@ -22,11 +22,21 @@ This project uses the following libraries for the Anaconda distribution of Pytho
 * sqlalchemy
 
 ### File Descriptions
-*app
-*data
-*models
-*ETL Pipeline Preparation.ipynb - Jupyter notebook to perform preliminary coding and ananlysis for the ETL pipeline process_data.py file.
-*ML Pipeline Preparation.ipynb - Jupyter notebook to perform preliminary coding and exploratory analysis before refactoring into the train_classifier.py file.
+* app - folder containing files for the web app
+    * templates - folder containing html code for the web app
+        * master.html - main page of web app
+        * go.html - classification result page of web app
+    * run.py - flask file that run web app
+* data - folder containing data files and ETL pipeline
+    * process_data.py - ETL pipeline python code
+    * categories.csv - data to process
+    * messages.csv - data to process
+    * DisasterResponse.db - database containing clean data
+* models - folder containing machine learning files
+    * train_classifier.py - machine learning pipeline python code
+    * classifier.pkl - final model exported as a pickle file
+* ETL Pipeline Preparation.ipynb - Jupyter notebook to perform preliminary coding and ananlysis for the ETL pipeline process_data.py file.
+* ML Pipeline Preparation.ipynb - Jupyter notebook to perform preliminary coding and exploratory analysis before refactoring into the train_classifier.py file.
 
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
