@@ -29,8 +29,8 @@ This project uses the following libraries for the Anaconda distribution of Pytho
     * run.py - flask file that run web app
 * data - folder containing data files and ETL pipeline
     * process_data.py - ETL pipeline python code
-    * categories.csv - data to process
-    * messages.csv - data to process
+    * disaster_categories.csv - data to process
+    * disaster_messages.csv - data to process
     * DisasterResponse.db - database containing clean data
 * models - folder containing machine learning files
     * train_classifier.py - machine learning pipeline python code
