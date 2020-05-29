@@ -4,6 +4,7 @@ import re
 import pickle
 import numpy as np
 import pandas as pd
+import warnings
 
 import nltk
 nltk.download(['punkt', 'wordnet', 'averaged_perceptron_tagger'])
@@ -81,7 +82,7 @@ def build_model():
     
     # tune pipeline with best parameters found in GridSearchCV
     params_custom = {'clf__estimator__min_samples_split': 2, 
-                     'vect__max_df': 0.75, 'vect__min_df': 0.01, 
+                     'vect__max_df': 1.0, 'vect__min_df': 0.001, 
                      'vect__ngram_range': (1, 1)}
     
     pipeline.set_params(**params_custom)
@@ -115,16 +116,11 @@ def evaluate_model(model, X_test, Y_test, category_names):
     Y_pred = model.predict(X_test)
     Y_pred2 = pd.DataFrame(Y_pred, columns = category_names)
     
+    warnings.filterwarnings('ignore')
+    
     for category in category_names:
-        categoryDF = pd.DataFrame(
-            classification_report(Y_test[category], Y_pred2[category], zero_division=0,output_dict=True)
-        )
         print(category)
-        print('    Accuracy: {}%  Precision: {}%  Recall: {}%\n'.format(
-            categoryDF.loc['f1-score','weighted avg'].round(4),
-            categoryDF.loc['precision','weighted avg'].round(4),
-            categoryDF.loc['recall','weighted avg'].round(4))
-             )
+        print(classification_report(Y_test[category], Y_pred2[category]))
 
 
 def save_model(model, model_filepath):
