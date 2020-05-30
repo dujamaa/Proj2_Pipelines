@@ -70,6 +70,11 @@ def save_data(df, database_filename):
 
 
 def main():
+    """Main Function to execute the steps of the ETL pipeline
+        1. Load data using the load_data function
+        2. Clean the data using the clean_data function
+        3. Saves data to SQL database using the save_data function
+    """
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]

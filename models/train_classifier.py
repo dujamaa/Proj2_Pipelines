@@ -135,6 +135,14 @@ def save_model(model, model_filepath):
 
 
 def main():
+    """Main Function to execute the steps of the Machine Learning pipeline
+        1. Load data from the SQL database using the load_data function
+        2. Perform train-test split
+        3. Build the model using the build_model function
+        4. Train the model using the training data
+        5. Evaluate the model using the evaluate_model function
+        6. Save the model using the save_model function
+    """
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
